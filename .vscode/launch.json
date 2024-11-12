@@ -1,0 +1,28 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug C Program",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/ex1", // Путь к вашему исполняемому файлу
+            "args": [], // Аргументы командной строки для вашей программы (если есть)
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}", // Рабочая директория для вашей программы
+            "environment": [],
+            "externalConsole": true, // Открыть внешнюю консоль для ввода/вывода
+            "MIMode": "gdb", // Использовать GDB для отладки
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "build C program", // Имя задачи сборки из tasks.json
+            "miDebuggerPath": "/usr/bin/gdb", // Путь к вашему GDB (возможно, потребуется изменить на путь к gdb.exe для Windows)
+            "internalConsoleOptions": "openOnSessionStart", // Открывать встроенный терминал отладки
+            "console": "integratedTerminal" // Использовать встроенный терминал для ввода/вывода
+        }
+    ]
+}
